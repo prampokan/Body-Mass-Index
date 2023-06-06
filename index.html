@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-800">
+    <div id="form" 
+        class="flex-col text-center mx-80 pb-10 pt-2 
+        bg-slate-900 mt-8 rounded drop-shadow-2xl">
+        <h1 class="text-5xl text-white font-bold my-10"
+            >Body Mass Index
+        </h1>
+        <div>
+            <div class="mb-5"> 
+                <p class="text-slate-400 mb-2"
+                    >Masukan tinggi badan!
+                </p>
+                <div>
+                    <input type="number" min="0"
+                        id="tinggiBadanInput" 
+                        placeholder="Tinggi (cm)" 
+                        class="outline-0 w-80 p-4 rounded bg-slate-700 text-white">
+                </div>
+            </div>
+            <div class="mb-7">
+                <p class="text-slate-400 mb-2"
+                    >Masukan berat badan!
+                </p>
+                <div>
+                    <input type="number" min="0"
+                            id="beratBadanInput"
+                            placeholder="Berat (kg)" 
+                            class="outline-0 w-80 p-4 rounded bg-slate-700 text-white">
+                </div>
+            </div>
+            <div>
+                <button id="count" 
+                        class="bg-blue-500 hover:bg-blue-700 ease-in duration-200 
+                        py-3 px-40 rounded text-white text-lg font-bold"
+                            >Hitung
+                </button>
+            </div>
+        </div>
+    </div>
+    <div 
+        id="formResult" 
+        class="flex-col text-center mx-80 pb-10 pt-2 bg-slate-900 
+        mt-8 rounded drop-shadow-2xl">
+        <h1 class="text-3xl text-white font-bold mt-10 mb-2"
+            >Hasil BMI
+        </h1>
+        <div class="text-white p-4 text-lg">
+           <b>Body Mass Index kamu adalah 
+                <b id="bmiResult" class="underline decoration-red-500 text-blue-500">
+                </b> <b>artinya kamu</b> <b id="txtResult" class="underline decoration-pink-500"></b>
+                <b id="txtResult2" class="underline decoration-indigo-500 text-red-400"></b> </b>    
+        </div>
+           <div>
+            <button id="btnBack" 
+                class="bg-blue-500 hover:bg-blue-700 ease-in duration-200 py-3 px-40 
+                rounded text-white text-lg font-bold"
+                    >Kembali
+            </button>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
