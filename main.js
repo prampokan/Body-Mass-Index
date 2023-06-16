@@ -5,8 +5,7 @@ const beratBadanInput = document.querySelector('#beratBadanInput')
 
 count.addEventListener('click', () => {
 
-   if (!tinggiBadanInput.value && !beratBadanInput.value) {
-        alert('isi dulu banh');
+   if (!tinggiBadanInput.value || !beratBadanInput.value) {
         return
    } 
 
@@ -18,22 +17,18 @@ count.addEventListener('click', () => {
 
    if (bmi <= 18.5) {
     document.querySelector('#bmiResult').innerHTML = (bmi)
-    document.querySelector('#txtResult').innerHTML = ('kekurangan berat badan')
-    document.querySelector('#txtResult2').innerHTML = ('(Underweight)')
+    document.querySelector('#txtResult2').innerHTML = ('Underweight')
 
    } else if (bmi >= 18.5 && bmi <= 24.9) {
     document.querySelector('#bmiResult').innerHTML = (bmi)
-    document.querySelector('#txtResult').innerHTML = ('memiliki tubuh ideal')
-    document.querySelector('#txtResult2').innerHTML = ('(Healthy weight)')
+    document.querySelector('#txtResult2').innerHTML = ('Healthy weight')
 
    } else if (bmi >= 25 && bmi <= 29.9) {
     document.querySelector('#bmiResult').innerHTML = (bmi)
-    document.querySelector('#txtResult').innerHTML = ('kelebihan berat badan')
-    document.querySelector('#txtResult2').innerHTML = ('(Overweight)')
+    document.querySelector('#txtResult2').innerHTML = ('Overweight')
    } else {
     document.querySelector('#bmiResult').innerHTML = (bmi)
-    document.querySelector('#txtResult').innerHTML = ('mengalami obesitas')
-    document.querySelector('#txtResult2').innerHTML = ('(Obesity)')
+    document.querySelector('#txtResult2').innerHTML = ('Obesity')
    }
 })
 

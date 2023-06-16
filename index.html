@@ -6,67 +6,78 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BMI Calculator</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+        @layer base {
+            input[type="number"]::-webkit-inner-spin-button,
+            input[type="number"]::-webkit-outer-spin-button {
+                -webkit-appearance: none;
+                margin: 0;
+                }
+        }
+    </style>
 </head>
-<body class="bg-slate-800">
-    <div id="form" 
-        class="flex-col text-center mx-80 pb-10 pt-2 
-        bg-slate-900 mt-8 rounded drop-shadow-2xl">
-        <h1 class="text-5xl text-white font-bold my-10"
-            >Body Mass Index
-        </h1>
-        <div>
-            <div class="mb-5"> 
-                <p class="text-slate-400 mb-2"
-                    >Masukan tinggi badan!
-                </p>
-                <div>
-                    <input type="number" min="0"
-                        id="tinggiBadanInput" 
-                        placeholder="Tinggi (cm)" 
-                        class="outline-0 w-80 p-4 rounded bg-slate-700 text-white">
+<body class="font-['Poppins']">
+    <div class="flex p-5">
+        <i class="fa-solid fa-link text-blue-600 ml-5 text-xl font-bold"></i>
+        <div class="text-lg font-semibold ml-4 text-slate-900 cursor-pointer hover:text-slate-700">
+            FitHub</div>
+        <ul class="flex ml-80 text-sm font-medium text-gray-700">
+            <li class="mx-3 cursor-pointer hover:text-blue-600">Home</li>
+            <li class="mx-3 cursor-pointer hover:text-blue-600">About Me</li>
+            <li class="mx-3 cursor-pointer hover:text-blue-600">Source Code</li>
+        </ul>
+    </div>
+    
+<div class="w-full flex justify-center">
+    <div class="w-4/5 text-center pb-10 pt-2 mt-3">
+        <div id="form">
+            <h1 class="text-4xl font-bold text-gray-800">
+                Count to know your <span class="text-blue-600">Body Mass Index</span>
+            </h1>
+            <p class="font-medium text-lg mt-5 text-gray-700">Input your weight and height 
+                then let us calculate if you have a healty weight or not 
+            </p>
+        </div>
+
+        <div id="formResult" class="flex-col w-4/5 ml-20">
+                <div class="text-lg">
+                    <h1 class="text-4xl font-bold text-gray-800 mb-5">Your Body Mass Index is
+                        <b id="bmiResult" class="text-red-500"></b>
+                    </h1> 
+                    </p class="font-medium text-lg text-gray-700">
+                        You're body experiences <b id="txtResult2"></b>
+                        <span id="txtResult"></span>
+                    </p>    
                 </div>
+        </div>
+
+        <div class="flex mt-10">
+            <div class="ml-44">
+                 <input type="number" min="0"
+                    id="tinggiBadanInput" 
+                    placeholder="input your height" 
+                    class="w-70 p-3 rounded border-2 border-blue-500 outline-red-500 text-sm">
             </div>
-            <div class="mb-7">
-                <p class="text-slate-400 mb-2"
-                    >Masukan berat badan!
-                </p>
-                <div>
-                    <input type="number" min="0"
-                            id="beratBadanInput"
-                            placeholder="Berat (kg)" 
-                            class="outline-0 w-80 p-4 rounded bg-slate-700 text-white">
-                </div>
+            <div class="ml-5">
+                <input type="number" min="0"
+                    id="beratBadanInput"
+                    placeholder="input your weight" 
+                    class="w-70 p-3 rounded border outline-blue-500 text-sm">
             </div>
             <div>
                 <button id="count" 
-                        class="bg-blue-500 hover:bg-blue-700 ease-in duration-200 
-                        py-3 px-40 rounded text-white text-lg font-bold"
-                            >Hitung
+                    class="hover:bg-gray-100 border py-3 ml-5 px-6
+                    rounded-full text-gray-700 text-sm font-medium"
+                    >Calculate
                 </button>
             </div>
         </div>
     </div>
-    <div 
-        id="formResult" 
-        class="flex-col text-center mx-80 pb-10 pt-2 bg-slate-900 
-        mt-8 rounded drop-shadow-2xl">
-        <h1 class="text-3xl text-white font-bold mt-10 mb-2"
-            >Hasil BMI
-        </h1>
-        <div class="text-white p-4 text-lg">
-           <b>Body Mass Index kamu adalah 
-                <b id="bmiResult" class="underline decoration-red-500 text-blue-500">
-                </b> <b>artinya kamu</b> <b id="txtResult" class="underline decoration-pink-500"></b>
-                <b id="txtResult2" class="underline decoration-indigo-500 text-red-400"></b> </b>    
-        </div>
-           <div>
-            <button id="btnBack" 
-                class="bg-blue-500 hover:bg-blue-700 ease-in duration-200 py-3 px-40 
-                rounded text-white text-lg font-bold"
-                    >Kembali
-            </button>
-        </div>
-    </div>
+</div>
+
+  
 
     <script src="main.js"></script>
 </body>
